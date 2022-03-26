@@ -1,16 +1,16 @@
-import { withOGImage } from 'next-api-og-image';
+import { withOGImage } from "next-api-og-image";
 
 export enum GeneralQueryEnum {
-  'logo',
-  'siteName',
-  'description',
-  'theme',
-  'templateTitle',
-  'logoWidth',
-  'logoHeight',
+  "logo",
+  "siteName",
+  "description",
+  "theme",
+  "templateTitle",
+  "logoWidth",
+  "logoHeight",
 }
 
-export default withOGImage<'query', keyof typeof GeneralQueryEnum>({
+export default withOGImage<"query", keyof typeof GeneralQueryEnum>({
   template: {
     html: async ({
       siteName,
@@ -22,12 +22,12 @@ export default withOGImage<'query', keyof typeof GeneralQueryEnum>({
       logoHeight,
     }) => {
       const query = {
-        siteName: siteName ?? 'Site Name',
-        description: description ?? 'Description',
-        logo: logo ?? 'https://og.thcl.dev/images/logo.jpg',
-        theme: theme ?? 'dark',
+        siteName: siteName ?? "Site Name",
+        description: description ?? "Description",
+        logo: logo ?? "https://og.adhamtarek.me/images/logo.jpg",
+        theme: theme ?? "dark",
         templateTitle,
-        logoWidth: logoWidth ?? '100',
+        logoWidth: logoWidth ?? "100",
         logoHeight,
       };
 
@@ -92,8 +92,8 @@ const getStyle = (
     justify-content: center;
     align-items: center;
 
-    background: ${query.theme === 'dark' ? '#222' : '#fff'};
-    color: ${query.theme === 'dark' ? 'white' : 'black'};
+    background: ${query.theme === "dark" ? "#222" : "#fff"};
+    color: ${query.theme === "dark" ? "white" : "black"};
 
     text-align: center;
     padding: 0 5rem;
@@ -113,7 +113,7 @@ const getStyle = (
 
   h3 {
     margin-top: 0.5rem;
-    color: ${query.theme === 'dark' ? '#E5E7EB' : '#374151'};
+    color: ${query.theme === "dark" ? "#E5E7EB" : "#374151"};
     font-size: 1.5rem;
   }
   
@@ -121,7 +121,7 @@ const getStyle = (
     font-size: 1.8rem;
     line-height: 1.5;
     margin-top: 1rem;
-    color: ${query.theme === 'dark' ? '#D1D5DB' : '#1F2937'};
+    color: ${query.theme === "dark" ? "#D1D5DB" : "#1F2937"};
   }
 </style>
 `;

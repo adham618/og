@@ -1,17 +1,17 @@
-import { withOGImage } from 'next-api-og-image';
+import { withOGImage } from "next-api-og-image";
 
 enum query {
-  'title',
-  'type',
-  'description',
+  "title",
+  "type",
+  "description",
 }
 
-export default withOGImage<'query', keyof typeof query>({
+export default withOGImage<"query", keyof typeof query>({
   template: {
     html: async ({ title, type, description }) => {
       const query = {
-        title: title ?? 'Title',
-        type: type ?? 'Type',
+        title: title ?? "Title",
+        type: type ?? "Type",
         description,
       };
       return `
@@ -22,7 +22,7 @@ export default withOGImage<'query', keyof typeof query>({
           <body>
             <div class="container">
               <header>
-                <img src="https://og.thcl.dev/images/logo.jpg" alt="Favicon" />
+                <img src="https://og.adhamtarek.me/images/logo.jpg" alt="Favicon" />
                 <div class="right">
                   <h2>${query.type} by</h2>
                   <p class="gradient">Theodorus Clarence</p>
@@ -32,7 +32,7 @@ export default withOGImage<'query', keyof typeof query>({
               ${
                 query.description
                   ? `<p class="description">${query.description}</p>`
-                  : ''
+                  : ""
               }
               <p class="site-name">theodorusclarence.com</p>
             </div>

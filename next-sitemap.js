@@ -1,7 +1,7 @@
 module.exports = {
-  siteUrl: 'https://og.thcl.dev/',
+  siteUrl: "https://og.adhamtarek.me/",
   generateRobotsTxt: true,
   robotsTxtOptions: {
-    policies: [{ userAgent: '*', allow: '/' }],
+    policies: [{ userAgent: "*", allow: "/" }],
   },
 };

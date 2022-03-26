@@ -1,16 +1,16 @@
-import { withOGImage } from 'next-api-og-image';
+import { withOGImage } from "next-api-og-image";
 
 enum QueryEnum {
-  'logo',
-  'siteName',
-  'description',
-  'theme',
-  'templateTitle',
-  'logoWidth',
-  'logoHeight',
+  "logo",
+  "siteName",
+  "description",
+  "theme",
+  "templateTitle",
+  "logoWidth",
+  "logoHeight",
 }
 
-export default withOGImage<'query', keyof typeof QueryEnum>({
+export default withOGImage<"query", keyof typeof QueryEnum>({
   template: {
     html: async ({
       siteName,
@@ -22,12 +22,12 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
       logoHeight,
     }) => {
       const query = {
-        siteName: siteName ?? 'Site Name',
-        description: description ?? 'Description',
-        logo: logo ?? 'https://og.thcl.dev/images/logo.jpg',
-        theme: theme ?? 'dark',
+        siteName: siteName ?? "Site Name",
+        description: description ?? "Description",
+        logo: logo ?? "https://og.adhamtarek.me/images/logo.jpg",
+        theme: theme ?? "dark",
         templateTitle,
-        logoWidth: logoWidth ?? '100',
+        logoWidth: logoWidth ?? "100",
         logoHeight,
       };
 
@@ -42,15 +42,15 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
               ${
                 query.templateTitle
                   ? `<h1>
-                  ${query.theme === 'dark' ? '<span class="gradient">' : ''}
+                  ${query.theme === "dark" ? '<span class="gradient">' : ""}
                   ${query.templateTitle}
-                  ${query.theme === 'dark' ? '</span>' : ''}
+                  ${query.theme === "dark" ? "</span>" : ""}
                   </h1>
                   <h3>${query.siteName}</h3>`
                   : `<h1>
-                  ${query.theme === 'dark' ? '<span class="gradient">' : ''}
+                  ${query.theme === "dark" ? '<span class="gradient">' : ""}
                   ${query.siteName}
-                  ${query.theme === 'dark' ? '</span>' : ''}
+                  ${query.theme === "dark" ? "</span>" : ""}
                   </h1>`
               }
               
@@ -101,8 +101,8 @@ const getStyle = (query: Record<keyof typeof QueryEnum, string | string[]>) => `
     justify-content: center;
     align-items: center;
 
-    background: ${query.theme === 'dark' ? '#222' : '#fff'};
-    color: ${query.theme === 'dark' ? 'white' : 'black'};
+    background: ${query.theme === "dark" ? "#222" : "#fff"};
+    color: ${query.theme === "dark" ? "white" : "black"};
 
     text-align: center;
     padding: 0 5rem;
@@ -122,7 +122,7 @@ const getStyle = (query: Record<keyof typeof QueryEnum, string | string[]>) => `
 
   h3 {
     margin-top: 0.5rem;
-    color: ${query.theme === 'dark' ? '#E5E7EB' : '#374151'};
+    color: ${query.theme === "dark" ? "#E5E7EB" : "#374151"};
     font-size: 1.5rem;
   }
 
@@ -137,7 +137,7 @@ const getStyle = (query: Record<keyof typeof QueryEnum, string | string[]>) => `
     font-size: 1.8rem;
     line-height: 1.5;
     margin-top: 1rem;
-    color: ${query.theme === 'dark' ? '#D1D5DB' : '#1F2937'};
+    color: ${query.theme === "dark" ? "#D1D5DB" : "#1F2937"};
   }
 </style>
 `;

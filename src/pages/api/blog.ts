@@ -1,17 +1,17 @@
-import { withOGImage } from 'next-api-og-image';
+import { withOGImage } from "next-api-og-image";
 
 enum QueryEnum {
-  'logo',
-  'siteName',
-  'description',
-  'theme',
-  'templateTitle',
-  'logoWidth',
-  'logoHeight',
-  'banner',
+  "logo",
+  "siteName",
+  "description",
+  "theme",
+  "templateTitle",
+  "logoWidth",
+  "logoHeight",
+  "banner",
 }
 
-export default withOGImage<'query', keyof typeof QueryEnum>({
+export default withOGImage<"query", keyof typeof QueryEnum>({
   template: {
     html: async ({
       siteName,
@@ -24,12 +24,12 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
       banner,
     }) => {
       const query = {
-        siteName: siteName ?? 'Site Name',
-        description: description ?? 'Description',
-        logo: logo ?? 'https://og.thcl.dev/images/logo.jpg',
-        theme: theme ?? 'dark',
+        siteName: siteName ?? "Site Name",
+        description: description ?? "Description",
+        logo: logo ?? "https://og.adhamtarek.me/images/logo.jpg",
+        theme: theme ?? "dark",
         templateTitle,
-        logoWidth: logoWidth ?? '100',
+        logoWidth: logoWidth ?? "100",
         logoHeight,
         banner,
       };
@@ -48,7 +48,7 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
                   </h3>
                   <h1 class="title">
                     <span class="gradient">
-                      ${query.templateTitle ?? 'Blog Title'}
+                      ${query.templateTitle ?? "Blog Title"}
                     </span>
                   </h1>
                   <div class="social">
@@ -60,7 +60,7 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
                   </div>
                 </div>
                 <div class="right">${
-                  banner ? `<img src="${banner}" />` : ''
+                  banner ? `<img src="${banner}" />` : ""
                 }</div>
               </div>
             </div>
@@ -109,8 +109,8 @@ const getStyle = (query: Record<keyof typeof QueryEnum, string | string[]>) => `
     justify-content: center;
     align-items: center;
 
-    background: ${query.theme === 'dark' ? '#222' : '#fff'};
-    color: ${query.theme === 'dark' ? 'white' : 'black'};
+    background: ${query.theme === "dark" ? "#222" : "#fff"};
+    color: ${query.theme === "dark" ? "white" : "black"};
 
     text-align: center;
     padding: 4rem 3rem;
@@ -125,7 +125,7 @@ const getStyle = (query: Record<keyof typeof QueryEnum, string | string[]>) => `
 
   h3 {
     margin-top: 0.5rem;
-    color: ${query.theme === 'dark' ? '#E5E7EB' : '#374151'};
+    color: ${query.theme === "dark" ? "#E5E7EB" : "#374151"};
     font-size: 1.5rem;
   }
 
